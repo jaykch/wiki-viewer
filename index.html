@@ -53,6 +53,7 @@
             transition: width .4s cubic-bezier(0.000, 0.795, 0.000, 1.000);
             cursor: pointer;
         }
+
         ::-webkit-input-placeholder {
             color: #0e0b49;
         }
@@ -61,7 +62,7 @@
             color: #0e0b49;
         }
 
-        ::-moz-placeholder {  /* Firefox 19+ */
+        ::-moz-placeholder { /* Firefox 19+ */
             color: #0e0b49;
         }
 
@@ -102,22 +103,72 @@
         input[type="submit"]:hover {
             opacity: 0.8;
         }
-        .test{
+
+        .view {
             display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
             align-items: center;
-            width:100vw;
+            width: 100vw;
             height: 100vh;
+        }
+
+        .result{
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease;
+            padding: 3px;
+            margin: 3px;
+            background: rgba(217, 217, 217, 0.43);
+            min-height: 6vh;
+        }
+
+        .result:hover{
+            background: rgba(14, 11, 73, 0.38);
+        }
+
+        #results{
+            list-style: none;
+        }
+
+        a{
+            -webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+        }
+        a, a:focus, a:visited{
+            color: #0e0b49;
+            text-decoration: none;
+        }
+        a:hover{
+            color: rgba(102, 102, 102, 0.65);
+            text-decoration: none;
+        }
+
+        a.result:hover{
+            color: rgba(243, 243, 243, 0.65);
         }
     </style>
 </head>
 <body>
-<div class="test">
+<div class="view">
     <div class="container">
         <div class="row">
             <div id="wrap">
                 <input id="search" name="search" type="text" placeholder="What're you looking for ?">
                 <input id="search_submit" value="val" type="submit">
             </div>
+        </div>
+        <div class="row text-center">
+            <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><h4>Go to a Random Wikipedia Article</h4></a></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="results" class="col-md-12"></div>
         </div>
     </div>
 
