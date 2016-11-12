@@ -7,10 +7,15 @@ function log(x){
 
 }
 
-function getResults(){
+var settings = {
+
+};
+
+function getSearchResults(){
+    var searchText = "laster";
     $.ajax({
         type: "GET",
-        url: "https://en.wikipedia.org/w/api.php?action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json&callback=?",
+        url: "http://en.wikipedia.org/w/api.php?action=query&format=json&list=search&srsearch=" + searchText + "&callback=?",
         contentType: "application/json; charset=utf-8",
         async: true,
         dataType: "json",
