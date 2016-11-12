@@ -26,11 +26,11 @@ function renderResults(results, searchOutput) {
     searchOutput.innerHTML = "";
     var description = "";
     for (var i in results) {
-        if (results[i].terms.description != undefined) {
+        if (results[i].terms.description) {
             description = results[i].terms.description[0]
         }
-    else
-        description = "";
+        else
+            description = "";
         searchOutput.innerHTML += "<a class='result col-md-12' href='" + results[i].fullurl + "' target='_blank'>" + "<span class='result-title'><strong>" + results[i].title + "</strong></span><br><span>" + description + "</span></a>";
     }
 }
